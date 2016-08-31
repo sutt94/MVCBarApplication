@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MVCBarApplication.Models.Drinks>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Drink Menu</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DrinkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrinkDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrinkPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrinkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrinkDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrinkPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Order", "Edit", new { id=item.DrinkID }) 
+            
+        </td>
+    </tr>
+}
+
+</table>
