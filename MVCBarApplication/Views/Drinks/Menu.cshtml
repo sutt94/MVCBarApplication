@@ -10,13 +10,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DrinkName)
+            Drink Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DrinkDescription)
+            Description
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DrinkPrice)
+            Price
         </th>
         <th></th>
     </tr>
@@ -30,10 +30,10 @@
             @Html.DisplayFor(modelItem => item.DrinkDescription)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DrinkPrice)
+            $@Html.DisplayFor(modelItem => item.DrinkPrice).00
         </td>
         <td>
-            @Html.ActionLink("Order", "Edit", new { id=item.DrinkID }) 
+            @Html.ActionLink("Order", "Order", new { id=item.DrinkID, DrinkName = item.DrinkName.Trim() }) 
             
         </td>
     </tr>
