@@ -144,6 +144,7 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="Views\Drinks\Menu.cshtml" />
     <Content Include="Views\Drinks\Order.cshtml" />
+    <Content Include="Views\Orders\OrderQueue.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -172,11 +173,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DrinksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Drinks.cs" />
     <Compile Include="Models\DrinksContext.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\OrdersContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

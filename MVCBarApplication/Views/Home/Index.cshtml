@@ -4,4 +4,16 @@
 }
 
 <h2>Welcome to Billy's bar application!</h2>
+<p>
+    @Html.ActionLink("Bar Menu", "Menu", "Drinks", null, new
+{
+    id = "OT",
+    style = "color: blue"
+}) |
+    @Html.ActionLink("Order Queue", "OrderQueue", "Orders", null, new
+{
+    id = "OT",
+    style = "color: blue"
+})
+</p>
 

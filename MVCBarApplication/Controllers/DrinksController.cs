@@ -12,15 +12,16 @@ namespace MVCBarApplication.Controllers
 {
     public class DrinksController : Controller
     {
-        // GET: Drinks
+        
         public ActionResult Menu()
         {
             DrinksContext drinksContext = new DrinksContext();
             Drinks[] drinks = drinksContext.Drinks.ToArray();
+           
             return View(drinks);
         }
 
-        public ActionResult Order(int id, string drinkName)
+        public ActionResult Order(int id, string drinkName, string txtCustomerName)
         {
             string connectionString =
             ConfigurationManager.ConnectionStrings["DrinksContext"].ConnectionString;
