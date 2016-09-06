@@ -33,10 +33,27 @@ namespace MVCBarApplication.Controllers
                 con.Open();
                 cmd.ExecuteNonQuery();
 
+                return View();
+            }
+        }
 
+        public ActionResult remove(int id)
+        {
+            string connectionString =
+               ConfigurationManager.ConnectionStrings["OrdersContext"].ConnectionString;
 
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("spRemove", con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                SqlParameter paramID = new SqlParameter();
+                paramID.ParameterName = "@OrderID";
+                paramID.Value = id;
+                cmd.Parameters.Add(paramID);
 
+                con.Open();
+                cmd.ExecuteNonQuery();
 
                 return View();
             }

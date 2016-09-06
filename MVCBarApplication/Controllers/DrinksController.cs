@@ -48,7 +48,7 @@ namespace MVCBarApplication.Controllers
 
                 SqlParameter paramCustomerName = new SqlParameter();
                 paramCustomerName.ParameterName = "@CustomerName";
-                paramCustomerName.Value = "Test";
+                paramCustomerName.Value = "Placeholder";
                 cmd.Parameters.Add(paramCustomerName);
 
                 con.Open();
