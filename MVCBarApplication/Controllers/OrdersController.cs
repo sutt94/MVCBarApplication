@@ -20,5 +20,27 @@ namespace MVCBarApplication.Controllers
             return View(orders);
             
         }
+
+        public ActionResult clearQueue()
+        {
+            string connectionString =
+               ConfigurationManager.ConnectionStrings["OrdersContext"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("spClearQueue", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+
+
+
+
+
+                return View();
+            }
+        }
+
     }
 }
